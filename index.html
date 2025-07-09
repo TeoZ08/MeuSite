@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matteo Scotti | Portfólio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navegacao">
+      <div class="nav-container">
+        <a href="#inicio" class="nav-logo"
+          ><span>&lt;</span>teo<span>&gt;</span></a
+        >
+
+        <button
+          class="menu-hamburguer"
+          id="menu-hamburguer"
+          aria-label="Abrir menu"
+        >
+          <span class="hamburguer-linha"></span>
+          <span class="hamburguer-linha"></span>
+          <span class="hamburguer-linha"></span>
+        </button>
+
+        <ul class="menu" id="menu-lista">
+          <li><a href="#sobre" class="menu-link">Sobre</a></li>
+          <li><a href="#projetos" class="menu-link">Projetos</a></li>
+          <li><a href="#contatos" class="menu-link">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="apresentacao" id="inicio" data-aos="fade-up">
+      <h1 class="apresentacao-titulo">Matteo Lima Scotti</h1>
+      <p class="apresentacao-sub-titulo">Estudante de Ciência da Computação</p>
+      <div class="apresentacao-redes">
+        <a
+          href="https://github.com/TeoZ08"
+          target="_blank"
+          aria-label="Link para o GitHub"
+          ><img src="./img/github.png" alt="GitHub"
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/matteo-lima-b55009314/"
+          target="_blank"
+          aria-label="Link para o LinkedIn"
+          ><img src="./img/linkedin.png" alt="LinkedIn"
+        /></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="secao-logo-animado">
+        <div class="logo-animado" data-aos="zoom-in" data-aos-duration="1000">
+          <span>&lt;</span>
+          <span>t</span>
+          <span>e</span>
+          <span>o</span>
+          <span>&gt;</span>
+        </div>
+      </section>
+
+      <section class="sobre" id="sobre" data-aos="fade-right">
+        <h2 class="section-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+          <p class="sobre-paragrafo">
+            Meu primeiro projeto sério de desenvolvimento web, buscando aprender
+            mais sobre HTML, CSS e JavaScript. Aberto a novas oportunidades e
+            desafios! :)
+          </p>
+        </div>
+      </section>
+
+      <section class="projetos" id="projetos" data-aos="fade-left">
+        <h2 class="section-titulo">Projetos</h2>
+        <div class="swiper projetos-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="projetos-card">
+                <a
+                  href="https://www.guincho10.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="img/projeto1.png"
+                    alt="Projeto para Empresa de Guincho"
+                    class="projetos-imagem"
+                  />
+                </a>
+                <div class="caixa-texto-projetos">
+                  <h3 class="info-projetos">Site para Guincho</h3>
+                  <p class="paragrafo-projetos">
+                    Landing page responsiva para uma empresa de serviços de
+                    guincho, focada em conversão.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section class="contatos" id="contatos" data-aos="fade-up">
+        <h2 class="section-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario">
+          <div class="grupo-form">
+            <label for="nome" class="sr-only">Nome</label>
+            <input
+              type="text"
+              placeholder="Seu nome"
+              class="campo-form"
+              id="nome"
+              required
+            />
+          </div>
+          <div class="grupo-form">
+            <label for="mensagem" class="sr-only">Sua mensagem</label>
+            <textarea
+              class="campo-form"
+              placeholder="Digite sua mensagem"
+              rows="6"
+              id="mensagem"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="botao-form">Enviar via WhatsApp</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p class="rodape-texto">Obrigado pela visita!</p>
+      <div class="redes-sociais">
+        <a
+          href="https://github.com/TeoZ08"
+          target="_blank"
+          aria-label="Link para o GitHub"
+          ><img src="./img/github.png" alt="GitHub" class="icone-rede-social"
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/matteo-lima-b55009314/"
+          target="_blank"
+          aria-label="Link para o LinkedIn"
+          ><img
+            src="./img/linkedin.png"
+            alt="LinkedIn"
+            class="icone-rede-social"
+        /></a>
+        <a
+          href="https://www.instagram.com/teoscotti_/"
+          target="_blank"
+          aria-label="Link para o Instagram"
+          ><img
+            src="./img/instagram.png"
+            alt="Instagram"
+            class="icone-rede-social"
+        /></a>
+      </div>
+      <p class="rodape-autoria">
+        © 2025 Matteo Lima Scotti. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
