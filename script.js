@@ -60,12 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- INICIALIZAÇÃO DO SWIPER JS ---
+    // --- INICIALIZAÇÃO DO SWIPER JS COM EFEITO COVERFLOW ---
     const swiper = new Swiper('.projetos-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
+        effect: 'coverflow',
+        grabCursor: true,
         centeredSlides: true,
+        slidesPerView: 'auto',
+        loop: true,
+        initialSlide: 0,
+
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
 
         pagination: {
             el: '.swiper-pagination',
@@ -76,16 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-
-        breakpoints: {
-            769: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-            }
-        }
     });
 });
