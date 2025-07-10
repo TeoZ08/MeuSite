@@ -247,9 +247,6 @@ main section {
   margin: 0 auto;
   padding: 2rem;
   background: var(--fundo-card);
-  border-radius: 16px;
-  border: 1px solid var(--vidro-borda);
-  box-shadow: 0 4px 20px var(--sombra);
 }
 
 .sobre-paragrafo {
