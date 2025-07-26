@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 'auto',
-        loop: true,
+        slidesPerView: '3',
+        loop: false,
         initialSlide: 0,
 
         coverflowEffect: {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows: true,
+            slideShadows: false,
         },
 
         pagination: {
