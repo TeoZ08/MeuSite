@@ -171,13 +171,16 @@ body {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-.apresentacao-redes img {
-  width: 35px;
-  height: 35px;
-  transition: transform 0.3s ease;
+
+.apresentacao-redes a {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.3s ease;
 }
-.apresentacao-redes img:hover {
-  transform: scale(1.2);
+
+.apresentacao-redes a:hover {
+  color: var(--secundaria);
 }
 
 /* --- SEÇÕES PRINCIPAIS --- */
@@ -272,7 +275,7 @@ main section {
   width: 320px;
   height: auto;
   -webkit-box-reflect: below 1px
-    linear-gradient(transparent, transparent, #0006);
+    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.288));
 }
 
 .swiper-button-next,
@@ -329,7 +332,6 @@ main section {
 
 .projetos-card:hover {
   transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 0 20px -8px var(--primaria);
 }
 
 .projetos-card:hover::after {
@@ -366,7 +368,6 @@ main section {
   padding: 2.5rem;
   border-radius: 16px;
   border: 1px solid var(--vidro-borda);
-  box-shadow: 0 4px 20px var(--sombra);
 }
 
 .grupo-form {
@@ -428,14 +429,15 @@ main section {
   gap: 2rem;
 }
 
-.icone-rede-social {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
+.redes-sociais a {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.3s ease;
 }
 
-.icone-rede-social:hover {
-  transform: scale(1.2);
+.redes-sociais a:hover {
+  color: var(--secundaria);
 }
 
 .rodape-autoria {
