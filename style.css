@@ -500,4 +500,7 @@ main section {
   .projetos {
     padding: 0 2rem;
   }
+  .projetos-swiper {
+    width: 50%;
+  }
 }
