@@ -60,31 +60,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- INICIALIZAÇÃO DO SWIPER JS COM EFEITO COVERFLOW ---
+    // --- INICIALIZAÇÃO DO SWIPER JS COM EFEITO CARDS ---
     const swiper = new Swiper('.projetos-swiper', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: '3',
+        effect: 'slide',
+        slidesPerView: 1,
+        spaceBetween: 30,
         loop: false,
-        initialSlide: 0,
-
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
+        grabCursor: true,
+        keyboard: {
+            enabled: true,
         },
-
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
-
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        breakpoints: {
+            300: {
+                effect: 'cards',
+                grabCursor: true,
+                cardsEffect: {
+                    slideShadows: false,
+                    perSlideRotate: 5,
+                    perSlideOffset: 40,
+                },
+            }
+        }
     });
 });
