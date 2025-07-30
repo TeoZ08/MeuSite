@@ -60,28 +60,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- INICIALIZAÇÃO DO SWIPER JS ---
-    // Swiper das miniaturas
-    var swiper = new Swiper(".mySwiper", {
-        loop: false, // Recomendo false aqui para não bugar a sincronia
-        spaceBetween: 10,
-        slidesPerView: 3,
-        freeMode: true,
-        watchSlidesProgress: true,
-    });
-
-    // Swiper principal
-    var swiper2 = new Swiper(".mySwiper2", {
-        loop: true,
-        spaceBetween: 10,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-            swiper: swiper,
-        },
-    });
-
-
 });
