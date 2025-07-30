@@ -17,14 +17,15 @@
 }
 
 :root {
-  --primaria: #a8b9f1;
-  --secundaria: #b67ed6;
-  --fundo: #2d343c;
-  --fundo-card: #38424c;
+  --primaria: #20c997; /* Verde menta / Turquesa suave e moderno */
+  --secundaria: #888888; /* Um cinza médio para textos secundários e bordas */
+  --fundo: #111111; /* Fundo quase preto, para máximo contraste */
+  --fundo-card: #1d1d1d; /* Card em cinza bem escuro */
   --preto: #0a0a0a;
-  --branco: #f0f0f0;
-  --vidro-borda: rgba(184, 125, 17, 0.1);
-  --sombra: rgba(168, 185, 241, 0.2);
+  --branco: #dedede; /* Texto principal em cinza claríssimo */
+
+  --sombra: rgba(32, 201, 151, 0.15);
+  --vidro-borda: rgba(32, 201, 151, 0.1);
 }
 
 html {
@@ -35,6 +36,16 @@ body {
   background: var(--fundo);
   color: var(--branco);
   font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+.apresentacao-titulo,
+.section-titulo {
+  font-family: "Cinzel", serif;
+  letter-spacing: 2px; /* Aumenta o espaço entre as letras */
+  text-transform: uppercase; /* Deixa tudo em maiúsculo, para um visual mais forte */
+  font-weight: 700; /* Usa a versão em negrito da fonte */
 }
 
 .section-titulo {
@@ -207,7 +218,7 @@ main section {
   display: flex;
   gap: 30px;
   font-size: 9.5rem;
-  color: rgb(116, 222, 248);
+  color: var(--primaria);
   font-family: "Lato", sans-serif;
 }
 
@@ -254,7 +265,6 @@ main section {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  background: var(--fundo-card);
 }
 
 .sobre-paragrafo {
@@ -263,11 +273,76 @@ main section {
   line-height: 1.6;
 }
 
+/*PARTE DE COMPETENCIAS DA SEÇÃO SOBRE*/
+
+/* --- ESTILOS DA SEÇÃO DE COMPETÊNCIAS --- */
+
+.competencias-container {
+  width: 100%;
+  margin-top: 40px; /* Espaço depois do parágrafo "Sobre Mim" */
+}
+
+.competencia-grupo {
+  margin-bottom: 30px; /* Espaço entre os grupos (Front, Back, etc) */
+}
+
+.competencia-titulo {
+  font-family: "Poppins", sans-serif; /* Usando Poppins para o subtítulo */
+  font-size: 1.5rem; /* 24px */
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ccc; /* Uma cor mais suave para o subtítulo */
+}
+
+.competencias-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os cards */
+}
+
+.competencia-card {
+  background-color: #222; /* Um pouco mais claro que o fundo dos slides */
+  border-radius: 10px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 120px;
+  text-align: center;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competencia-card:hover {
+  transform: translateY(-5px); /* Efeito de flutuar */
+  box-shadow: 0 4px 20px rgba(119, 9, 82, 0.384); /* Sombra ciano sutil */
+}
+
+.competencia-card i {
+  font-size: 3rem; /* Tamanho do ícone (48px) */
+  color: #888; /* Cor padrão dos ícones */
+  transition: color 0.3s ease;
+}
+
+.competencia-card span {
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+  color: #ddd;
+}
+
+/* Efeito de cor no hover para cada ícone */
+.competencia-card:hover i {
+  color: var(--primaria); /* Cor Ciano para dar destaque no hover */
+}
+
 /* --- PROJETOS (SWIPER) --- */
 
 .projetos {
-  background-color: var(--fundo-card);
   padding: 40px; /* Adicionado padding em cima e embaixo também */
+  margin-top: 15rem;
 }
 
 /* Estilo geral para ambos os swipers */
@@ -346,6 +421,40 @@ main section {
 /* Faz a imagem dentro do slide "flutuar" um pouco para frente */
 .mySwiper2 .swiper-slide img {
   transform: translateZ(30px);
+}
+
+/* Efeito de escurecer */
+
+/* --- EFEITO DE COR E ZOOM NOS PROJETOS --- */
+
+/* 1. Define o estado inicial da imagem do projeto principal */
+.mySwiper2 .swiper-slide img {
+  filter: grayscale(100%); /* Deixa a imagem totalmente em preto e branco */
+  transition: filter 0.4s ease, transform 0.4s ease; /* Anima a transição da cor e do zoom */
+  transform: translateZ(30px); /* Mantém o efeito 3D que já tínhamos */
+}
+
+/* 2. Define o que acontece quando o mouse passa por cima do slide */
+.mySwiper2 .swiper-slide:hover img {
+  filter: grayscale(0%); /* A imagem volta a ter 100% de cor */
+  transform: translateZ(30px) scale(1.05); /* Mantém o efeito 3D e adiciona um leve zoom */
+}
+
+/* 3. (BÔNUS) Vamos aplicar o mesmo efeito nas miniaturas (thumbnails) para consistência */
+.mySwiper .swiper-slide {
+  opacity: 0.6; /* Deixa as miniaturas inativas um pouco transparentes */
+}
+.mySwiper .swiper-slide img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+/* 4. A miniatura ATIVA (correspondente ao slide principal) fica colorida e 100% opaca */
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.mySwiper .swiper-slide-thumb-active img {
+  filter: grayscale(0%);
 }
 
 /* --- CONTATOS --- */
@@ -510,6 +619,11 @@ main section {
 
   .menu-link:hover::after {
     width: 100%;
+  }
+
+  .sobre-caixa {
+    border-top-left-radius: 128px;
+    border-top-right-radius: 128px;
   }
 }
 
