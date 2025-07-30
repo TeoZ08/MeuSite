@@ -264,83 +264,88 @@ main section {
 }
 
 /* --- PROJETOS (SWIPER) --- */
+
 .projetos {
   background-color: var(--fundo-card);
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 40px; /* Adicionado padding em cima e embaixo também */
 }
 
-.projetos-swiper {
+/* Estilo geral para ambos os swipers */
+.swiper {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  height: 100%;
 }
 
 .swiper-slide {
-  background-position: center;
-  background-size: cover;
+  text-align: center;
+  font-size: 18px;
+  background: #222; /* Fundo um pouco mais escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Swiper principal (imagens grandes) */
+.mySwiper2 {
+  height: 400px; /* Aumentei um pouco a altura */
+  width: 100%;
+  margin-bottom: 10px; /* Espaço entre ele e as miniaturas */
+}
+
+/* Swiper das miniaturas */
+.mySwiper {
+  height: 100px; /* Altura fixa para as miniaturas */
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.mySwiper .swiper-slide:hover {
+  opacity: 0.8;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+/* Deixando as setas mais visíveis */
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--primaria);
-  transition: transform 0.2s ease;
+  color: #fff !important; /* Cor da seta */
+  background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important; /* Tamanho do ícone da seta */
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  transform: scale(1.2);
+/* --- EFEITO TILT 3D --- */
+
+/* Prepara o slide para receber transformações 3D */
+.mySwiper2 .swiper-slide {
+  transform-style: preserve-3d;
 }
 
-.swiper-button-next:focus,
-.swiper-button-prev:focus {
-  outline: none;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--primaria) !important;
-}
-
-.projetos-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 400px;
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-  background-size: cover;
-  background-position: center;
-
-  box-sizing: border-box;
-  border: 3px solid var(--fundo);
-  transition: border-radius 0.4s ease, border-color 0.3s ease;
-}
-
-.projetos-card:hover {
-  border-color: #8190c4;
-  border-radius: 50px;
-}
-
-.card-conteudo {
-  padding: 1.5rem;
-  z-index: 2;
-  color: var(--branco);
-  background-color: #0a0a0a8a;
-}
-
-.info-projetos {
-  font-size: 1.75rem;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.paragrafo-projetos {
-  font-size: 1rem;
-  color: #ccc;
-  margin: 0.25rem 0 0 0;
+/* Faz a imagem dentro do slide "flutuar" um pouco para frente */
+.mySwiper2 .swiper-slide img {
+  transform: translateZ(30px);
 }
 
 /* --- CONTATOS --- */
@@ -426,6 +431,18 @@ main section {
 .rodape-autoria {
   font-size: 0.9rem;
   color: #aaa;
+}
+
+/* --- REMOVE DESTAQUE AZUL NO TOQUE (MOBILE) --- */
+
+.mySwiper2 .swiper-slide {
+  -webkit-tap-highlight-color: transparent; /* Remove o destaque de toque no Chrome/Safari */
+  -webkit-touch-callout: none; /* Impede o menu de salvar imagem etc. no iOS */
+  -webkit-user-select: none; /* Impede a seleção de texto/imagem no Chrome/Safari */
+  -moz-user-select: none; /* Impede a seleção no Firefox */
+  -ms-user-select: none; /* Impede a seleção no Internet Explorer/Edge */
+  user-select: none; /* Padrão oficial para impedir a seleção */
+  outline: none; /* Garante que não haja uma borda de foco */
 }
 
 /* --- RESPONSIVIDADE --- */

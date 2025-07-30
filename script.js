@@ -60,38 +60,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- INICIALIZAÇÃO DO SWIPER JS COM EFEITO CARDS ---
-    const swiper = new Swiper('.projetos-swiper', {
-        effect: 'slide',
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: false,
-        grabCursor: true,
-        keyboard: {
-            enabled: true,
-        },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
+    // --- INICIALIZAÇÃO DO SWIPER JS ---
+    // Swiper das miniaturas
+    var swiper = new Swiper(".mySwiper", {
+        loop: false, // Recomendo false aqui para não bugar a sincronia
+        spaceBetween: 10,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+    // Swiper principal
+    var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
-        breakpoints: {
-            300: {
-                effect: 'cards',
-                grabCursor: true,
-                cardsEffect: {
-                    slideShadows: false,
-                    perSlideRotate: 5,
-                    perSlideOffset: 40,
-                },
-            }
-        }
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+
+    // --- INICIALIZAÇÃO DO TILT.JS ---
+    // Aplicando o efeito apenas nos slides do swiper principal
+    VanillaTilt.init(document.querySelectorAll(".mySwiper2 .swiper-slide"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.5,
     });
 });

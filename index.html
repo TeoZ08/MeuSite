@@ -107,59 +107,45 @@
 
       <section class="projetos" id="projetos" data-aos="fade-left">
         <h2 class="section-titulo">Projetos</h2>
-        <div class="swiper projetos-swiper">
+
+        <div
+          style="
+            --swiper-navigation-color: #fff;
+            --swiper-pagination-color: #fff;
+          "
+          class="swiper mySwiper2 projetos-swiper"
+        >
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a
-                href="https://www.guincho10.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="projetos-card"
-                style="background-image: url('img/projeto1.png')"
-              >
-                <div class="card-conteudo">
-                  <h3 class="info-projetos">Site para Guincho</h3>
-                  <p class="paragrafo-projetos">Landing page responsiva.</p>
-                </div>
-              </a>
+            <div class="swiper-slide" data-tilt>
+              <img src="./img/projeto1.png" alt="Site de guincho" />
             </div>
 
-            <div class="swiper-slide">
-              <a
-                href="https://teoz08.github.io/sitedoclima/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="projetos-card"
-                style="background-image: url('img/projeto2.png')"
-              >
-                <div class="card-conteudo">
-                  <h3 class="info-projetos">Site de Clima e Tempo</h3>
-                  <p class="paragrafo-projetos">HTML, CSS, JS e APIs.</p>
-                </div>
-              </a>
+            <div class="swiper-slide" data-tilt>
+              <img src="./img/projeto2.png" alt="Site com API de clima" />
             </div>
 
-            <div class="swiper-slide">
-              <a
-                href="https://teoz08.github.io/FrontEnd-ApicomNode/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="projetos-card"
-                style="background-image: url('img/projeto3.jpeg')"
-              >
-                <div class="card-conteudo">
-                  <h3 class="info-projetos">Agenda de Contatos</h3>
-                  <p class="paragrafo-projetos">
-                    Agenda com Node.js, React e MongoDB.
-                  </p>
-                </div>
-              </a>
+            <div class="swiper-slide" data-tilt>
+              <img src="./img/projeto3.jpeg" alt="Site de Agenda" />
             </div>
           </div>
-
-          <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <div thumbsSlider="" class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/projeto1.png" alt="Miniatura do Projeto 1" />
+            </div>
+
+            <div class="swiper-slide">
+              <img src="./img/projeto2.png" alt="Miniatura do Projeto 2" />
+            </div>
+
+            <div class="swiper-slide">
+              <img src="./img/projeto3.jpeg" alt="Miniatura da Agenda" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -217,7 +203,7 @@
         © 2025 Matteo Lima Scotti. Todos os direitos reservados.
       </p>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
