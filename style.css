@@ -10,7 +10,6 @@
   box-sizing: border-box;
 }
 
-/* Cor customizada para a seleção de texto */
 ::selection {
   background-color: var(--primaria);
   color: var(--fundo);
@@ -23,7 +22,6 @@
   --fundo-card: #1d1d1d; /* Card em cinza bem escuro */
   --preto: #0a0a0a;
   --branco: #dedede; /* Texto principal em cinza claríssimo */
-
   --sombra: rgba(32, 201, 151, 0.15);
   --vidro-borda: rgba(32, 201, 151, 0.1);
 }
@@ -37,15 +35,14 @@ body {
   color: var(--branco);
   font-family: "Poppins", sans-serif;
 }
-
 h1,
 h2,
 .apresentacao-titulo,
 .section-titulo {
-  font-family: "Cinzel", serif;
-  letter-spacing: 2px; /* Aumenta o espaço entre as letras */
-  text-transform: uppercase; /* Deixa tudo em maiúsculo, para um visual mais forte */
-  font-weight: 700; /* Usa a versão em negrito da fonte */
+  font-family: "Manrope", sans-serif;
+  font-weight: 800; /* Usando um peso bem forte para impacto */
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Um valor menor que antes, para um visual mais natural */
 }
 
 .section-titulo {
@@ -95,7 +92,7 @@ h2,
   z-index: 10;
 }
 .nav-logo span {
-  color: var(--secundaria);
+  color: var(--primaria);
 }
 
 /* --- ESTILOS DO MENU MOBILE (PADRÃO) --- */
@@ -226,8 +223,9 @@ main section {
   position: relative;
   display: inline-block;
   user-select: none;
-  text-shadow: 0 1px 0 #8190c4, 0 2px 0 #8190c4, 0 3px 0 #8190c4,
-    0 4px 0 #8190c4, 0 5px 0 #8190c4, 0 6px 0 transparent, 0 7px 0 transparent,
+  text-shadow: 0 1px 0 var(--secundaria), 0 2px 0 var(--secundaria),
+    0 3px 0 var(--secundaria), 0 4px 0 var(--secundaria),
+    0 5px 0 var(--secundaria), 0 6px 0 transparent, 0 7px 0 transparent,
     0 8px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.5);
   animation: bounce 0.6s ease-out infinite alternate;
 }
@@ -251,9 +249,11 @@ main section {
 @keyframes bounce {
   100% {
     top: -20px;
-    text-shadow: 0 1px 0 #8190c4, 0 2px 0 #8190c4, 0 3px 0 #8190c4,
-      0 4px 0 #8190c4, 0 5px 0 #8190c4, 0 6px 0 #8190c4, 0 7px 0 #8190c4,
-      0 8px 0 #8190c4, 0 9px 0 #8190c4, 0 60px 30px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 0 var(--secundaria), 0 2px 0 var(--secundaria),
+      0 3px 0 var(--secundaria), 0 4px 0 var(--secundaria),
+      0 5px 0 var(--secundaria), 0 6px 0 var(--secundaria),
+      0 7px 0 var(--secundaria), 0 8px 0 var(--secundaria),
+      0 9px 0 var(--secundaria), 0 60px 30px rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -273,37 +273,34 @@ main section {
   line-height: 1.6;
 }
 
-/*PARTE DE COMPETENCIAS DA SEÇÃO SOBRE*/
-
 /* --- ESTILOS DA SEÇÃO DE COMPETÊNCIAS --- */
-
 .competencias-container {
   width: 100%;
-  margin-top: 40px; /* Espaço depois do parágrafo "Sobre Mim" */
+  margin-top: 40px;
 }
 
 .competencia-grupo {
-  margin-bottom: 30px; /* Espaço entre os grupos (Front, Back, etc) */
+  margin-bottom: 30px;
 }
 
 .competencia-titulo {
-  font-family: "Poppins", sans-serif; /* Usando Poppins para o subtítulo */
-  font-size: 1.5rem; /* 24px */
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 20px;
-  color: #ccc; /* Uma cor mais suave para o subtítulo */
+  color: var(--primaria);
 }
 
 .competencias-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Espaçamento entre os cards */
+  gap: 20px;
 }
 
 .competencia-card {
-  background-color: #222; /* Um pouco mais claro que o fundo dos slides */
+  background-color: var(--fundo-card);
   border-radius: 10px;
   padding: 20px 25px;
   display: flex;
@@ -317,144 +314,104 @@ main section {
 }
 
 .competencia-card:hover {
-  transform: translateY(-5px); /* Efeito de flutuar */
-  box-shadow: 0 4px 20px rgba(119, 9, 82, 0.384); /* Sombra ciano sutil */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px var(--sombra);
 }
 
 .competencia-card i {
-  font-size: 3rem; /* Tamanho do ícone (48px) */
-  color: #888; /* Cor padrão dos ícones */
+  font-size: 3rem;
+  color: var(--secundaria);
   transition: color 0.3s ease;
 }
 
 .competencia-card span {
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
   font-weight: 500;
-  color: #ddd;
+  color: var(--branco);
 }
 
-/* Efeito de cor no hover para cada ícone */
 .competencia-card:hover i {
-  color: var(--primaria); /* Cor Ciano para dar destaque no hover */
+  color: var(--primaria);
 }
 
-/* --- PROJETOS (SWIPER) --- */
-
+/* --- PROJETOS --- */
+/* --- NOVA SEÇÃO DE PROJETOS --- */
 .projetos {
-  padding: 40px; /* Adicionado padding em cima e embaixo também */
-  margin-top: 15rem;
+  padding: 4rem 2rem; /* Espaçamento padrão */
 }
 
-/* Estilo geral para ambos os swipers */
-.swiper {
-  width: 100%;
-  height: 100%;
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Grade responsiva */
+  gap: 2rem; /* Espaço entre os cards */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.swiper-slide {
+.projeto-card {
+  background-color: var(--fundo-card);
+  border: 1px solid #222;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-icones-acao {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.card-icones-acao a {
+  color: var(--secundaria);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.card-icones-acao a:hover {
+  color: var(--primaria);
+}
+
+.card-conteudo-principal {
   text-align: center;
-  font-size: 18px;
-  background: #222; /* Fundo um pouco mais escuro */
+}
+
+.card-icone-projeto {
+  font-size: 4rem;
+  color: var(--primaria);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card-titulo-projeto {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--branco);
+}
+
+.card-tecnologias {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Swiper principal (imagens grandes) */
-.mySwiper2 {
-  height: 400px; /* Aumentei um pouco a altura */
-  width: 100%;
-  margin-bottom: 10px; /* Espaço entre ele e as miniaturas */
-}
-
-/* Swiper das miniaturas */
-.mySwiper {
-  height: 100px; /* Altura fixa para as miniaturas */
-  box-sizing: border-box;
-  padding: 10px 0;
-}
-
-.mySwiper .swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.5;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.mySwiper .swiper-slide:hover {
-  opacity: 0.8;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-/* Deixando as setas mais visíveis */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #fff !important; /* Cor da seta */
-  background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-}
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 24px !important; /* Tamanho do ícone da seta */
-}
-
-/* --- EFEITO TILT 3D --- */
-
-/* Prepara o slide para receber transformações 3D */
-.mySwiper2 .swiper-slide {
-  transform-style: preserve-3d;
-}
-
-/* Faz a imagem dentro do slide "flutuar" um pouco para frente */
-.mySwiper2 .swiper-slide img {
-  transform: translateZ(30px);
-}
-
-/* Efeito de escurecer */
-
-/* --- EFEITO DE COR E ZOOM NOS PROJETOS --- */
-
-/* 1. Define o estado inicial da imagem do projeto principal */
-.mySwiper2 .swiper-slide img {
-  filter: grayscale(100%); /* Deixa a imagem totalmente em preto e branco */
-  transition: filter 0.4s ease, transform 0.4s ease; /* Anima a transição da cor e do zoom */
-  transform: translateZ(30px); /* Mantém o efeito 3D que já tínhamos */
-}
-
-/* 2. Define o que acontece quando o mouse passa por cima do slide */
-.mySwiper2 .swiper-slide:hover img {
-  filter: grayscale(0%); /* A imagem volta a ter 100% de cor */
-  transform: translateZ(30px) scale(1.05); /* Mantém o efeito 3D e adiciona um leve zoom */
-}
-
-/* 3. (BÔNUS) Vamos aplicar o mesmo efeito nas miniaturas (thumbnails) para consistência */
-.mySwiper .swiper-slide {
-  opacity: 0.6; /* Deixa as miniaturas inativas um pouco transparentes */
-}
-.mySwiper .swiper-slide img {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-/* 4. A miniatura ATIVA (correspondente ao slide principal) fica colorida e 100% opaca */
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-.mySwiper .swiper-slide-thumb-active img {
-  filter: grayscale(0%);
+  gap: 1.5rem;
+  font-size: 2rem;
+  color: var(--secundaria);
 }
 
 /* --- CONTATOS --- */
@@ -543,15 +500,14 @@ main section {
 }
 
 /* --- REMOVE DESTAQUE AZUL NO TOQUE (MOBILE) --- */
-
 .mySwiper2 .swiper-slide {
-  -webkit-tap-highlight-color: transparent; /* Remove o destaque de toque no Chrome/Safari */
-  -webkit-touch-callout: none; /* Impede o menu de salvar imagem etc. no iOS */
-  -webkit-user-select: none; /* Impede a seleção de texto/imagem no Chrome/Safari */
-  -moz-user-select: none; /* Impede a seleção no Firefox */
-  -ms-user-select: none; /* Impede a seleção no Internet Explorer/Edge */
-  user-select: none; /* Padrão oficial para impedir a seleção */
-  outline: none; /* Garante que não haja uma borda de foco */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -625,12 +581,11 @@ main section {
     border-top-left-radius: 128px;
     border-top-right-radius: 128px;
   }
-}
 
-@media (min-width: 769px) {
   .projetos {
     padding: 0 2rem;
   }
+
   .projetos-swiper {
     width: 50%;
   }

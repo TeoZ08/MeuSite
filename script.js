@@ -83,12 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // --- INICIALIZAÇÃO DO TILT.JS ---
-    // Aplicando o efeito apenas nos slides do swiper principal
-    VanillaTilt.init(document.querySelectorAll(".mySwiper2 .swiper-slide"), {
-        max: 15,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.5,
-    });
+
 });

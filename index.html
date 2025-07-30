@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -169,45 +169,93 @@
         </div>
       </section>
 
-      <section class="projetos" id="projetos" data-aos="fade-left">
+      <section class="projetos" id="projetos" data-aos="fade-up">
         <h2 class="section-titulo">Projetos</h2>
 
-        <div
-          style="
-            --swiper-navigation-color: #fff;
-            --swiper-pagination-color: #fff;
-          "
-          class="swiper mySwiper2 projetos-swiper"
-        >
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-tilt>
-              <img src="./img/projeto1.png" alt="Site de guincho" />
+        <div class="projetos-grid">
+          <div class="projeto-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-icones-acao">
+              <a
+                href="URL_DO_SITE_GUINCHO"
+                target="_blank"
+                aria-label="Ver site ao vivo"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+              <a
+                href="URL_DO_GITHUB_GUINCHO"
+                target="_blank"
+                aria-label="Ver código no GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
             </div>
-
-            <div class="swiper-slide" data-tilt>
-              <img src="./img/projeto2.png" alt="Site com API de clima" />
-            </div>
-
-            <div class="swiper-slide" data-tilt>
-              <img src="./img/projeto3.jpeg" alt="Site de Agenda" />
+            <div classs="card-conteudo-principal">
+              <div class="card-icone-projeto">
+                <i class="fa-solid fa-truck-pickup"></i>
+              </div>
+              <h3 class="card-titulo-projeto">Site Institucional</h3>
+              <div class="card-tecnologias">
+                <i class="devicon-html5-plain" title="HTML5"></i>
+                <i class="devicon-css3-plain" title="CSS3"></i>
+                <i class="devicon-javascript-plain" title="JavaScript"></i>
+              </div>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
 
-        <div thumbsSlider="" class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="./img/projeto1.png" alt="Miniatura do Projeto 1" />
+          <div class="projeto-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-icones-acao">
+              <a
+                href="URL_DO_SITE_CLIMA"
+                target="_blank"
+                aria-label="Ver site ao vivo"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+              <a
+                href="URL_DO_GITHUB_CLIMA"
+                target="_blank"
+                aria-label="Ver código no GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
             </div>
-
-            <div class="swiper-slide">
-              <img src="./img/projeto2.png" alt="Miniatura do Projeto 2" />
+            <div classs="card-conteudo-principal">
+              <div class="card-icone-projeto">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </div>
+              <h3 class="card-titulo-projeto">Previsão do Tempo</h3>
+              <div class="card-tecnologias">
+                <i class="devicon-html5-plain" title="HTML5"></i>
+                <i class="devicon-css3-plain" title="CSS3"></i>
+                <i class="devicon-javascript-plain" title="JavaScript"></i>
+                <i class="fa-solid fa-satellite-dish" title="API"></i>
+              </div>
             </div>
+          </div>
 
-            <div class="swiper-slide">
-              <img src="./img/projeto3.jpeg" alt="Miniatura da Agenda" />
+          <div class="projeto-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-icones-acao">
+              <a
+                href="URL_DO_SITE_AGENDA"
+                target="_blank"
+                aria-label="Ver site ao vivo"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+              <a
+                href="URL_DO_GITHUB_AGENDA"
+                target="_blank"
+                aria-label="Ver código no GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+            <div classs="card-conteudo-principal">
+              <div class="card-icone-projeto">
+                <i class="fa-solid fa-address-book"></i>
+              </div>
+              <h3 class="card-titulo-projeto">Agenda de Contatos</h3>
+              <div class="card-tecnologias">
+                <i class="devicon-react-original" title="React"></i>
+                <i class="devicon-nodejs-plain" title="Node.js"></i>
+                <i class="devicon-express-original" title="Express"></i>
+                <i class="devicon-mongodb-plain" title="MongoDB"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -267,7 +315,7 @@
         © 2025 Matteo Lima Scotti. Todos os direitos reservados.
       </p>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
