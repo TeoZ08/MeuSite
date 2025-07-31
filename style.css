@@ -16,6 +16,7 @@
 }
 
 :root {
+  --montanhasvg: #1c8a65d7;
   --primaria: #20c997;
   --secundaria: #888888;
   --fundo: #111111;
@@ -166,32 +167,48 @@ h3,
 
 /* --- SEÇÃO DE APRESENTAÇÃO (HEADER) --- */
 
-/* --- SEÇÃO DE APRESENTAÇÃO (HEADER) - VERSÃO ESTÁVEL --- */
-
-/* 1. O container principal (o "palco") */
 .apresentacao {
+  /* Layout para centralizar o conteúdo */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 10rem 2rem 12rem; /* Define a altura no mobile */
-  position: relative;
-  overflow: hidden; /* Impede o overflow horizontal */
+
+  /* Altura e espaçamento */
+  padding: 10rem 2rem;
+  position: relative; /* Necessário para o z-index do conteúdo */
+
+  /* --- O FUNDO SVG ACONTECE AQUI --- */
+  background-color: var(--fundo); /* Cor de fundo caso a imagem falhe */
+  background-image: url("data:image/svg+xml,%3Csvg id='visual' viewBox='0 0 960 540' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3Cpath d='M0 165L74 227L148 128L222 157L295 126L369 263L443 99L517 170L591 140L665 214L738 222L812 217L886 193L960 87L960 0L886 0L812 0L738 0L665 0L591 0L517 0L443 0L369 0L295 0L222 0L148 0L74 0L0 0Z' fill='%231c8a65'%3E%3C/path%3E%3Cpath d='M0 149L74 199L148 229L222 180L295 86L369 151L443 122L517 183L591 109L665 172L738 71L812 161L886 100L960 91L960 0L886 0L812 0L738 0L665 0L591 0L517 0L443 0L369 0L295 0L222 0L148 0L74 0L0 0Z' fill='%23257355'%3E%3C/path%3E%3Cpath d='M0 80L74 118L148 125L222 69L295 128L369 143L443 117L517 59L591 94L665 116L738 55L812 119L886 129L960 133L960 0L886 0L812 0L738 0L665 0L591 0L517 0L443 0L369 0L295 0L222 0L148 0L74 0L0 0Z' fill='%23275c46'%3E%3C/path%3E%3Cpath d='M0 43L74 95L148 134L222 83L295 34L369 55L443 99L517 116L591 40L665 117L738 139L812 50L886 100L960 72L960 0L886 0L812 0L738 0L665 0L591 0L517 0L443 0L369 0L295 0L222 0L148 0L74 0L0 0Z' fill='%23264638'%3E%3C/path%3E%3Cpath d='M0 106L74 94L148 67L222 113L295 46L369 57L443 90L517 37L591 41L665 112L738 73L812 49L886 47L960 97L960 0L886 0L812 0L738 0L665 0L591 0L517 0L443 0L369 0L295 0L222 0L148 0L74 0L0 0Z' fill='%2323312a'%3E%3C/path%3E%3Cpath d='M0 14L74 41L148 2L222 9L295 28L369 4L443 60L517 25L591 50L665 72L738 72L812 8L886 37L960 30L960 0L886 0L812 0L738 0L665 0L591 0L517 0L443 0L369 0L295 0L222 0L148 0L74 0L0 0Z' fill='%231d1d1d'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center bottom; /* Alinha a base das montanhas no rodapé */
+  background-repeat: no-repeat;
 }
 
-/* 2. O conteúdo que fica na frente */
+/* O conteúdo que fica na frente */
 .apresentacao-conteudo {
   position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  z-index: 2; /* Garante que o conteúdo fique na frente do fundo */
 }
 
 .apresentacao-titulo {
   font-size: 2.5rem;
+  cursor: default;
+  user-select: none;
 }
 
+/* --- ESTILOS PARA O EFEITO DE HOVER NAS LETRAS --- */
+
+.apresentacao-titulo span {
+  display: inline-block; /* Melhora a "caixa" de hover de cada letra */
+  transition: color 0.2s ease, transform 0.2s ease; /* Anima a cor e uma pequena subida */
+}
+
+.apresentacao-titulo span:hover {
+  color: var(--montanhasvg); /* Muda para sua cor de destaque */
+  transform: translateY(-3px); /* Faz a letra subir um pouco */
+}
 .apresentacao-sub-titulo {
   font-size: 1.2rem;
   color: var(--primaria);
@@ -202,6 +219,8 @@ h3,
   display: flex;
   gap: 1.5rem;
   margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .apresentacao-redes a {
@@ -213,48 +232,6 @@ h3,
 
 .apresentacao-redes a:hover {
   color: var(--secundaria);
-}
-
-/* --- ONDAS ANIMADAS (VERSÃO ESTÁVEL) --- */
-
-/* 3. O container que segura as ondas */
-.header-ondas-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 320px; /* Altura máxima das ondas */
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* 4. Estilo para AMBAS as ondas */
-.onda {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200vw;
-  height: auto;
-}
-
-/* 5. A animação de loop */
-@keyframes animar-onda {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* 6. Aplicação da animação */
-#onda1 {
-  animation: animar-onda 35s linear infinite reverse;
-}
-
-#onda2 {
-  animation: animar-onda 25s linear infinite;
-  opacity: 0.7;
 }
 
 /* --- SEÇÕES PRINCIPAIS --- */
