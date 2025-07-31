@@ -261,9 +261,9 @@ main section {
   position: relative;
   display: inline-block;
   user-select: none;
-  text-shadow: 0 1px 0 var(--secundaria), 0 2px 0 var(--secundaria),
-    0 3px 0 var(--secundaria), 0 4px 0 var(--secundaria),
-    0 5px 0 var(--secundaria), 0 6px 0 transparent, 0 7px 0 transparent,
+  text-shadow: 0 1px 0 var(--vidro-borda), 0 2px 0 var(--vidro-borda),
+    0 3px 0 var(--vidro-borda), 0 4px 0 var(--vidro-borda),
+    0 5px 0 var(--vidro-borda), 0 6px 0 transparent, 0 7px 0 transparent,
     0 8px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.5);
   animation: bounce 0.6s ease-out infinite alternate;
 }
@@ -287,11 +287,11 @@ main section {
 @keyframes bounce {
   100% {
     top: -20px;
-    text-shadow: 0 1px 0 var(--secundaria), 0 2px 0 var(--secundaria),
-      0 3px 0 var(--secundaria), 0 4px 0 var(--secundaria),
-      0 5px 0 var(--secundaria), 0 6px 0 var(--secundaria),
-      0 7px 0 var(--secundaria), 0 8px 0 var(--secundaria),
-      0 9px 0 var(--secundaria), 0 60px 30px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 0 var(--vidro-borda), 0 2px 0 var(--vidro-borda),
+      0 3px 0 var(--vidro-borda), 0 4px 0 var(--vidro-borda),
+      0 5px 0 var(--vidro-borda), 0 6px 0 var(--vidro-borda),
+      0 7px 0 var(--vidro-borda), 0 8px 0 var(--vidro-borda),
+      0 9px 0 var(--vidro-borda), 0 60px 30px rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -374,7 +374,7 @@ main section {
 /* --- PROJETOS --- */
 .projetos {
   padding: 4rem 2rem;
-  margin-top: 0;
+  scroll-margin-top: 6rem;
 }
 
 .projetos-grid {
